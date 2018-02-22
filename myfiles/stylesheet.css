@@ -1,0 +1,31 @@
+* {
+	box-sizing:border-box;
+}
+body{
+	display: flex;
+	flex-flow:row wrap;
+	line-height: 1.5em;
+}
+
+header, article,aside,footer{
+	width: 100%;
+	padding: 0.2em;
+}
+
+header{
+    border-bottom: black 1px solid;
+}
+
+body{
+    background-color:white;
+}
+
+.images img{
+    height: 55px;
+    width: 55px;
+}
+
+.companies a{
+    display:inline-block;
+    margin:auto;
+}

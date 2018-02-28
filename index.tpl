@@ -23,22 +23,20 @@
     <div class="mainpage">
         <div class="images">
             <img src="/static/ao.png">
-            <img src="/static/n1.png">
-            <img src="/static/daelan.png">
-            <img src="/static/skeljungur.png">
             <img src="/static/costco.png">
-            <img src="/static/olis.png">
+            <img src="/static/daelan.png">
+            <img src="/static/n1.png">
             <img src="/static/ob.png">
+            <img src="/static/olis.png">
             <img src="/static/orkan.png">
             <img src="/static/orkanx.png">
         </div>
 
+        %for c in companies:
         <div class="companies">
-            %for c in companies:
             <a href="/company/{{c}}">{{c}}</a><br>
-            %end
-
         </div>
+        %end
 
         %t = data['timestampPriceCheck']
         %t= t[:19]
@@ -48,8 +46,17 @@
         <h4>Uppfært:{{data['timestampPriceCheck'][8:-13]}} {{data['timestampPriceCheck'][5:-16]}} {{data['timestampPriceCheck'][:4]}}
             Kl. {{data['timestampPriceCheck'][-12:]}} (Substring)</h4>
 
+        <%
+        cheapestbensin95 = []
+        for small in data['results']:
+            if small['bensin95'] not in cheapestbensin95:
+                cheapestbensin95.append(small['bensin95'])
+            end
+        end
+        %>
+        <h4>{{min(cheapestbensin95[''])}}</h4>
 
-
+        <a href="/" class="homehref">Heim</a>
     </div>
 </body>
 </html>

@@ -5,13 +5,37 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>More Info</title>
 </head>
 <body>
     % include('header.tpl')
-    <h1>Nánari upplýsingar</h1>
-    %if data['results']['key'] = id
-    
-    <h3>Söluaðili:{{}}</h3>
+    <div class="moreinfopage">
+        <h1>Nánari upplýsingar</h1>
+        <br>
+        <div class="moreinfotable">
+            <table>
+                <tbody>
+        %for uppl in data['results']:
+            %if uppl['key'] == id:
+                <tr>
+                    <td>Söluaðili: {{uppl['company']}}</td>
+                </tr>
+                <tr>
+                    <td>Staður: {{uppl['name']}}</td>
+                </tr>
+                <tr>
+                    <td>Bensín: {{uppl['bensin95']}}</td>
+                </tr><tr>
+                    <td>Dísel: {{uppl['diesel']}}</td>
+                </tr>
+
+            %end
+        %end
+                </tbody>
+            </table>
+        </div>
+        <a href="/" class="homehref">Heim</a>
+    </div>
+
 </body>
 </html>

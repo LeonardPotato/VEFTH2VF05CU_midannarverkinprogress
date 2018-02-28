@@ -23,7 +23,7 @@
 
             % for name in data['results']:
                 % if name['company'] == route:
-                <tr>
+                <tr class="bensinstod">
                     <td>{{name['company']}}</td>
                     <td><a href="/moreinfo/{{name['key']}}">{{name['name']}}</a></td>
                 </tr>
@@ -34,7 +34,7 @@
             </tbody>
         </table>
 
-
+        <a href="/" class="homehref">Heim</a>
     </div>
 </body>
 </html>
